@@ -64,9 +64,5 @@ function handlStarts(data) {
 }
 
 function handlContributions(data) {
-  let contributors = [];
-  data.forEach((contributor) => {
-    contributors.push(contributor.login);
-  });
-  githubRepoContributors.textContent = contributors.join(", ");
+  githubRepoContributors.textContent = data.map((contributor) => contributor.login).join(", ");
 }
